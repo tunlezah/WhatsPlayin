@@ -7,7 +7,7 @@ final class DuplicateDetectionService {
 
     private var lastFingerprintHash: String?
     private var lastDetectionTime: Date?
-    private var trackCooldowns: [String: Date] = [] // trackKey -> lastDetectedAt
+    private var trackCooldowns: [String: Date] = [:] // trackKey -> lastDetectedAt
 
     /// Remaining global cooldown seconds (for UI countdown)
     var remainingCooldown: TimeInterval {
