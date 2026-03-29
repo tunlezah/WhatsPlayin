@@ -1,0 +1,43 @@
+name: Build macOS App
+
+on:
+  push:
+    branches: [ main, 'claude/**' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-15
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Select Xcode
+      run: sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer
+
+    - name: Show Xcode version
+      run: xcodebuild -version
+
+    - name: Build
+      run: |
+        xcodebuild build \
+          -project WhatsPlayin.xcodeproj \
+          -scheme WhatsPlayin \
+          -destination 'platform=macOS' \
+          -configuration Release \
+          CODE_SIGN_IDENTITY="-" \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO \
+          | xcpretty || true
+
+        # Verify build succeeded by checking exit code of xcodebuild
+        xcodebuild build \
+          -project WhatsPlayin.xcodeproj \
+          -scheme WhatsPlayin \
+          -destination 'platform=macOS' \
+          -configuration Release \
+          CODE_SIGN_IDENTITY="-" \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO

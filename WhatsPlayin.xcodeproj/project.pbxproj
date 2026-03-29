@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10001001 /* WhatsPlayinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000001; };
+		A10001002 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000002; };
+		A10001003 /* IdentificationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000003; };
+		A10001004 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000004; };
+		A10001005 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000005; };
+		A10001006 /* CoverArtService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000006; };
+		A10001007 /* DuplicateDetectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000007; };
+		A10001008 /* FingerprintService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000008; };
+		A10001009 /* MetadataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000009; };
+		A10001010 /* RecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000010; };
+		A10001011 /* AcoustIDProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000011; };
+		A10001012 /* MusicRecognitionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000012; };
+		A10001013 /* StubProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000013; };
+		A10001014 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000014; };
+		A10001015 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000015; };
+		A10001016 /* UIStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000016; };
+		A10001017 /* AirPlayNowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000017; };
+		A10001018 /* AlbumArtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000018; };
+		A10001019 /* ConfidenceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000019; };
+		A10001020 /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020; };
+		A10001021 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000021; };
+		A10001022 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000022; };
+		A10001023 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000023; };
+		A10001024 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000024; };
+		A10001025 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000025; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A10000001 /* WhatsPlayinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsPlayinApp.swift; sourceTree = "<group>"; };
+		A10000002 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		A10000003 /* IdentificationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationResult.swift; sourceTree = "<group>"; };
+		A10000004 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		A10000005 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		A10000006 /* CoverArtService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverArtService.swift; sourceTree = "<group>"; };
+		A10000007 /* DuplicateDetectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateDetectionService.swift; sourceTree = "<group>"; };
+		A10000008 /* FingerprintService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerprintService.swift; sourceTree = "<group>"; };
+		A10000009 /* MetadataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataService.swift; sourceTree = "<group>"; };
+		A10000010 /* RecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionService.swift; sourceTree = "<group>"; };
+		A10000011 /* AcoustIDProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcoustIDProvider.swift; sourceTree = "<group>"; };
+		A10000012 /* MusicRecognitionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRecognitionProvider.swift; sourceTree = "<group>"; };
+		A10000013 /* StubProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubProvider.swift; sourceTree = "<group>"; };
+		A10000014 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A10000015 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A10000016 /* UIStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateManager.swift; sourceTree = "<group>"; };
+		A10000017 /* AirPlayNowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayNowPlayingView.swift; sourceTree = "<group>"; };
+		A10000018 /* AlbumArtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumArtView.swift; sourceTree = "<group>"; };
+		A10000019 /* ConfidenceIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfidenceIndicator.swift; sourceTree = "<group>"; };
+		A10000020 /* StatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
+		A10000021 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
+		A10000022 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		A10000023 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A10000024 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
+		A10000025 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A10000030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10000031 /* WhatsPlayin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatsPlayin.entitlements; sourceTree = "<group>"; };
+		A10000050 /* WhatsPlayin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsPlayin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A10002001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A10003000 = {
+			isa = PBXGroup;
+			children = (
+				A10003001 /* WhatsPlayin */,
+				A10003099 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A10003099 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10000050 /* WhatsPlayin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A10003001 /* WhatsPlayin */ = {
+			isa = PBXGroup;
+			children = (
+				A10003002 /* App */,
+				A10003003 /* Models */,
+				A10003004 /* Services */,
+				A10003007 /* ViewModels */,
+				A10003008 /* Views */,
+				A10003010 /* Utilities */,
+				A10000030 /* Info.plist */,
+				A10000031 /* WhatsPlayin.entitlements */,
+			);
+			path = WhatsPlayin;
+			sourceTree = "<group>";
+		};
+		A10003002 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A10000001 /* WhatsPlayinApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A10003003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A10000002 /* AppSettings.swift */,
+				A10000003 /* IdentificationResult.swift */,
+				A10000004 /* Track.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A10003004 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A10000005 /* AudioService.swift */,
+				A10000006 /* CoverArtService.swift */,
+				A10000007 /* DuplicateDetectionService.swift */,
+				A10000008 /* FingerprintService.swift */,
+				A10000009 /* MetadataService.swift */,
+				A10000010 /* RecognitionService.swift */,
+				A10003005 /* Providers */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A10003005 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				A10000011 /* AcoustIDProvider.swift */,
+				A10000012 /* MusicRecognitionProvider.swift */,
+				A10000013 /* StubProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		A10003007 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A10000016 /* UIStateManager.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A10003008 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A10000017 /* AirPlayNowPlayingView.swift */,
+				A10000021 /* DebugView.swift */,
+				A10000022 /* HistoryView.swift */,
+				A10000023 /* MainView.swift */,
+				A10000024 /* NowPlayingView.swift */,
+				A10000025 /* SettingsView.swift */,
+				A10003009 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A10003009 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A10000018 /* AlbumArtView.swift */,
+				A10000019 /* ConfidenceIndicator.swift */,
+				A10000020 /* StatusIndicator.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A10003010 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A10000014 /* Constants.swift */,
+				A10000015 /* Logger.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A10004001 /* WhatsPlayin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10006001 /* Build configuration list for PBXNativeTarget "WhatsPlayin" */;
+			buildPhases = (
+				A10005001 /* Sources */,
+				A10002001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhatsPlayin;
+			productName = WhatsPlayin;
+			productReference = A10000050 /* WhatsPlayin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A10007001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A10004001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = A10006002 /* Build configuration list for PBXProject "WhatsPlayin" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A10003000;
+			productRefGroup = A10003099 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A10004001 /* WhatsPlayin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A10005001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10001001 /* WhatsPlayinApp.swift in Sources */,
+				A10001002 /* AppSettings.swift in Sources */,
+				A10001003 /* IdentificationResult.swift in Sources */,
+				A10001004 /* Track.swift in Sources */,
+				A10001005 /* AudioService.swift in Sources */,
+				A10001006 /* CoverArtService.swift in Sources */,
+				A10001007 /* DuplicateDetectionService.swift in Sources */,
+				A10001008 /* FingerprintService.swift in Sources */,
+				A10001009 /* MetadataService.swift in Sources */,
+				A10001010 /* RecognitionService.swift in Sources */,
+				A10001011 /* AcoustIDProvider.swift in Sources */,
+				A10001012 /* MusicRecognitionProvider.swift in Sources */,
+				A10001013 /* StubProvider.swift in Sources */,
+				A10001014 /* Constants.swift in Sources */,
+				A10001015 /* Logger.swift in Sources */,
+				A10001016 /* UIStateManager.swift in Sources */,
+				A10001017 /* AirPlayNowPlayingView.swift in Sources */,
+				A10001018 /* AlbumArtView.swift in Sources */,
+				A10001019 /* ConfidenceIndicator.swift in Sources */,
+				A10001020 /* StatusIndicator.swift in Sources */,
+				A10001021 /* DebugView.swift in Sources */,
+				A10001022 /* HistoryView.swift in Sources */,
+				A10001023 /* MainView.swift in Sources */,
+				A10001024 /* NowPlayingView.swift in Sources */,
+				A10001025 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A10008001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A10008002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		A10008003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WhatsPlayin/WhatsPlayin.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatsPlayin/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "WhatsPlayin needs microphone access to listen to and identify music playing nearby.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whatsplayin.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A10008004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WhatsPlayin/WhatsPlayin.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatsPlayin/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "WhatsPlayin needs microphone access to listen to and identify music playing nearby.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whatsplayin.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A10006001 /* Build configuration list for PBXNativeTarget "WhatsPlayin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10008003 /* Debug */,
+				A10008004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A10006002 /* Build configuration list for PBXProject "WhatsPlayin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10008001 /* Debug */,
+				A10008002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = A10007001 /* Project object */;
+}
