@@ -108,6 +108,9 @@ final class UIStateManager: ObservableObject {
                     if case .listening = self.appState {} else {
                         self.appState = .idle
                     }
+                case .requestingPermission:
+                    // Stay in current state while permission dialog is shown
+                    break
                 case .listening:
                     self.appState = .listening
                 case .error(let msg):

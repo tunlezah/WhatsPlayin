@@ -32,7 +32,26 @@
 		A10001023 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000023; };
 		A10001024 /* NowPlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000024; };
 		A10001025 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000025; };
+		B10001001 /* TrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000001; };
+		B10001002 /* IdentificationResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000002; };
+		B10001003 /* FingerprintServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000003; };
+		B10001004 /* DuplicateDetectionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000004; };
+		B10001005 /* AudioServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000005; };
+		B10001006 /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000006; };
+		B10001007 /* ConstantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000007; };
+		B10001008 /* StubProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000008; };
+		B10001009 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000009; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B10009001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A10007001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A10004001;
+			remoteInfo = WhatsPlayin;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A10000001 /* WhatsPlayinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsPlayinApp.swift; sourceTree = "<group>"; };
@@ -63,10 +82,27 @@
 		A10000030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A10000031 /* WhatsPlayin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatsPlayin.entitlements; sourceTree = "<group>"; };
 		A10000050 /* WhatsPlayin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsPlayin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10000001 /* TrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTests.swift; sourceTree = "<group>"; };
+		B10000002 /* IdentificationResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificationResultTests.swift; sourceTree = "<group>"; };
+		B10000003 /* FingerprintServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerprintServiceTests.swift; sourceTree = "<group>"; };
+		B10000004 /* DuplicateDetectionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateDetectionServiceTests.swift; sourceTree = "<group>"; };
+		B10000005 /* AudioServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioServiceTests.swift; sourceTree = "<group>"; };
+		B10000006 /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
+		B10000007 /* ConstantsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsTests.swift; sourceTree = "<group>"; };
+		B10000008 /* StubProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubProviderTests.swift; sourceTree = "<group>"; };
+		B10000009 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
+		B10000050 /* WhatsPlayinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsPlayinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A10002001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B10002001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A10003001 /* WhatsPlayin */,
+				B10003001 /* WhatsPlayinTests */,
 				A10003099 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				A10000050 /* WhatsPlayin.app */,
+				B10000050 /* WhatsPlayinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +228,22 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		B10003001 /* WhatsPlayinTests */ = {
+			isa = PBXGroup;
+			children = (
+				B10000001 /* TrackTests.swift */,
+				B10000002 /* IdentificationResultTests.swift */,
+				B10000003 /* FingerprintServiceTests.swift */,
+				B10000004 /* DuplicateDetectionServiceTests.swift */,
+				B10000005 /* AudioServiceTests.swift */,
+				B10000006 /* AppStateTests.swift */,
+				B10000007 /* ConstantsTests.swift */,
+				B10000008 /* StubProviderTests.swift */,
+				B10000009 /* LoggerTests.swift */,
+			);
+			path = WhatsPlayinTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,6 +263,23 @@
 			productReference = A10000050 /* WhatsPlayin.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B10004001 /* WhatsPlayinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B10006001 /* Build configuration list for PBXNativeTarget "WhatsPlayinTests" */;
+			buildPhases = (
+				B10005001 /* Sources */,
+				B10002001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B10009002 /* PBXTargetDependency */,
+			);
+			name = WhatsPlayinTests;
+			productName = WhatsPlayinTests;
+			productReference = B10000050 /* WhatsPlayinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -221,6 +292,10 @@
 				TargetAttributes = {
 					A10004001 = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					B10004001 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A10004001;
 					};
 				};
 			};
@@ -238,6 +313,7 @@
 			projectRoot = "";
 			targets = (
 				A10004001 /* WhatsPlayin */,
+				B10004001 /* WhatsPlayinTests */,
 			);
 		};
 /* End PBXProject section */
@@ -275,7 +351,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B10005001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10001001 /* TrackTests.swift in Sources */,
+				B10001002 /* IdentificationResultTests.swift in Sources */,
+				B10001003 /* FingerprintServiceTests.swift in Sources */,
+				B10001004 /* DuplicateDetectionServiceTests.swift in Sources */,
+				B10001005 /* AudioServiceTests.swift in Sources */,
+				B10001006 /* AppStateTests.swift in Sources */,
+				B10001007 /* ConstantsTests.swift in Sources */,
+				B10001008 /* StubProviderTests.swift in Sources */,
+				B10001009 /* LoggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B10009002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A10004001 /* WhatsPlayin */;
+			targetProxy = B10009001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A10008001 /* Debug */ = {
@@ -440,6 +540,38 @@
 			};
 			name = Release;
 		};
+		B10008001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whatsplayin.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatsPlayin.app/Contents/MacOS/WhatsPlayin";
+			};
+			name = Debug;
+		};
+		B10008002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whatsplayin.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatsPlayin.app/Contents/MacOS/WhatsPlayin";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -457,6 +589,15 @@
 			buildConfigurations = (
 				A10008001 /* Debug */,
 				A10008002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B10006001 /* Build configuration list for PBXNativeTarget "WhatsPlayinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B10008001 /* Debug */,
+				B10008002 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

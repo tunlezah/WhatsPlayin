@@ -3,6 +3,7 @@ import Combine
 
 enum AudioServiceState {
     case idle
+    case requestingPermission
     case listening
     case error(String)
 }
@@ -18,6 +19,11 @@ final class AudioService: ObservableObject {
     private let logger = AppLogger.shared
     private let lock = NSLock()
 
+    /// Maximum number of retries when audio format is invalid after permission grant
+    private static let maxSetupRetries = 3
+    /// Delay between setup retries to allow CoreAudio to propagate permission
+    private static let setupRetryDelay: UInt64 = 500_000_000 // 0.5s in nanoseconds
+
     private var targetSampleRate: Double { Constants.Audio.defaultSampleRate }
     private var maxBufferSamples: Int {
         Int(settings.bufferDuration * targetSampleRate)
@@ -28,7 +34,13 @@ final class AudioService: ObservableObject {
     }
 
     func startListening() {
-        guard case .idle = state else { return }
+        switch state {
+        case .idle, .error:
+            break // Allowed to start
+        case .requestingPermission, .listening:
+            return // Already in progress
+        }
+
         guard checkMicrophonePermission() else {
             requestMicrophonePermission()
             return
@@ -37,8 +49,10 @@ final class AudioService: ObservableObject {
     }
 
     func stopListening() {
-        audioEngine?.stop()
-        audioEngine?.inputNode.removeTap(onBus: 0)
+        if let engine = audioEngine {
+            engine.stop()
+            engine.inputNode.removeTap(onBus: 0)
+        }
         audioEngine = nil
         state = .idle
         lock.lock()
@@ -86,26 +100,81 @@ final class AudioService: ObservableObject {
     }
 
     private func requestMicrophonePermission() {
+        state = .requestingPermission
+        logger.info("Requesting microphone permission", category: .audio)
+
         AVCaptureDevice.requestAccess(for: .audio) { [weak self] granted in
             DispatchQueue.main.async {
+                guard let self = self else { return }
+                // Only proceed if we're still in the requestingPermission state
+                // (user hasn't cancelled or triggered something else)
+                guard case .requestingPermission = self.state else { return }
+
                 if granted {
-                    self?.setupAudioEngine()
+                    self.logger.info("Microphone permission granted", category: .audio)
+                    self.setupAudioEngineWithRetry()
                 } else {
-                    self?.state = .error("Microphone access denied. Please enable in System Settings > Privacy & Security > Microphone.")
-                    self?.logger.error("Microphone permission denied", category: .audio)
+                    self.state = .error("Microphone access denied. Please enable in System Settings > Privacy & Security > Microphone.")
+                    self.logger.error("Microphone permission denied", category: .audio)
                 }
             }
         }
     }
 
-    private func setupAudioEngine() {
+    /// Attempts to set up the audio engine with retries to handle the case where
+    /// CoreAudio hasn't finished configuring the input device after permission grant.
+    private func setupAudioEngineWithRetry(attempt: Int = 0) {
+        guard attempt < Self.maxSetupRetries else {
+            state = .error("Could not access audio input device. Please check System Settings and restart the app.")
+            logger.error("Audio engine setup failed after \(Self.maxSetupRetries) attempts", category: .audio)
+            return
+        }
+
+        if attempt > 0 {
+            logger.info("Retrying audio engine setup (attempt \(attempt + 1)/\(Self.maxSetupRetries))", category: .audio)
+        }
+
+        let setupResult = setupAudioEngine()
+
+        if case .needsRetry = setupResult {
+            // CoreAudio hasn't propagated the permission yet — retry after a short delay
+            Task { @MainActor in
+                try? await Task.sleep(nanoseconds: Self.setupRetryDelay)
+                self.setupAudioEngineWithRetry(attempt: attempt + 1)
+            }
+        }
+    }
+
+    private enum SetupResult {
+        case success
+        case failed
+        case needsRetry
+    }
+
+    private func setupAudioEngine() -> SetupResult {
         let engine = AVAudioEngine()
+
+        // On macOS, accessing inputNode can throw an ObjC NSException if no audio
+        // input device is available. We validate the format to detect this case safely.
         let inputNode = engine.inputNode
         let inputFormat = inputNode.outputFormat(forBus: 0)
 
         logger.info("Input format: \(inputFormat.sampleRate)Hz, \(inputFormat.channelCount)ch", category: .audio)
 
+        // Validate format: after a fresh permission grant, CoreAudio may not have
+        // configured the input device yet, returning 0 sampleRate / 0 channels.
+        guard inputFormat.sampleRate > 0, inputFormat.channelCount > 0 else {
+            logger.error("Invalid input format (sampleRate=\(inputFormat.sampleRate), channels=\(inputFormat.channelCount))", category: .audio)
+            return .needsRetry
+        }
+
         let downsampleRatio = inputFormat.sampleRate / targetSampleRate
+
+        // Sanity check: downsampleRatio must be positive and finite
+        guard downsampleRatio.isFinite, downsampleRatio > 0 else {
+            logger.error("Invalid downsample ratio: \(downsampleRatio)", category: .audio)
+            return .needsRetry
+        }
 
         inputNode.installTap(onBus: 0, bufferSize: 4096, format: inputFormat) { [weak self] buffer, _ in
             self?.processAudioBuffer(buffer, downsampleRatio: downsampleRatio)
@@ -116,9 +185,12 @@ final class AudioService: ObservableObject {
             audioEngine = engine
             state = .listening
             logger.info("Audio engine started at \(targetSampleRate)Hz target", category: .audio)
+            return .success
         } catch {
+            inputNode.removeTap(onBus: 0)
             state = .error("Failed to start audio engine: \(error.localizedDescription)")
             logger.error("Audio engine start failed: \(error)", category: .audio)
+            return .failed
         }
     }
 

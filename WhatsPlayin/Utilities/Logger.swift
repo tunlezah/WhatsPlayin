@@ -22,7 +22,6 @@ final class AppLogger {
     /// Debug log entries for the debug panel
     @Published private(set) var debugEntries: [DebugLogEntry] = []
     private let maxDebugEntries = 200
-    private let lock = NSLock()
 
     private init() {
         for category in [LogCategory.audio, .fingerprint, .recognition, .metadata, .coverArt, .ui, .network, .general] {
@@ -54,18 +53,32 @@ final class AppLogger {
             level: level,
             message: message
         )
-        lock.lock()
+        // @Published must be mutated from the main thread to avoid Combine crashes.
+        // Log calls can originate from any thread (e.g., audio callback).
+        if Thread.isMainThread {
+            appendEntry(entry)
+        } else {
+            DispatchQueue.main.async { [weak self] in
+                self?.appendEntry(entry)
+            }
+        }
+    }
+
+    private func appendEntry(_ entry: DebugLogEntry) {
         debugEntries.append(entry)
         if debugEntries.count > maxDebugEntries {
             debugEntries.removeFirst(debugEntries.count - maxDebugEntries)
         }
-        lock.unlock()
     }
 
     func clearDebugEntries() {
-        lock.lock()
-        debugEntries.removeAll()
-        lock.unlock()
+        if Thread.isMainThread {
+            debugEntries.removeAll()
+        } else {
+            DispatchQueue.main.async { [weak self] in
+                self?.debugEntries.removeAll()
+            }
+        }
     }
 }
 
