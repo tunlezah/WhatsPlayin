@@ -13,7 +13,7 @@ struct DebugView: View {
                 Text("Debug")
                     .font(.caption)
                     .fontWeight(.bold)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Theme.cyan)
                 Spacer()
                 Button("Clear") {
                     logger.clearDebugEntries()
@@ -30,7 +30,7 @@ struct DebugView: View {
                     .foregroundStyle(.tertiary)
                 ProgressView(value: Double(audioService.currentLevel), total: 1.0)
                     .progressViewStyle(.linear)
-                    .tint(audioService.isSilent ? .gray : .green)
+                    .tint(audioService.isSilent ? Theme.idle : Theme.cyan)
             }
 
             // Buffer fill
@@ -40,7 +40,7 @@ struct DebugView: View {
                     .foregroundStyle(.tertiary)
                 ProgressView(value: audioService.bufferFillPercent)
                     .progressViewStyle(.linear)
-                    .tint(.blue)
+                    .tint(Theme.purple)
             }
 
             // Cooldown state
@@ -51,11 +51,12 @@ struct DebugView: View {
                 Text(duplicateService.isInCooldown ? "\(Int(duplicateService.remainingCooldown))s" : "none")
                     .font(.caption2)
                     .monospacedDigit()
-                    .foregroundStyle(duplicateService.isInCooldown ? .orange : .green)
+                    .foregroundStyle(duplicateService.isInCooldown ? Theme.amber : Theme.cyan)
             }
 
             // Log entries
             Divider()
+                .overlay(Theme.midnightBlue)
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 2) {
                     ForEach(logger.debugEntries.suffix(50).reversed()) { entry in
@@ -65,7 +66,7 @@ struct DebugView: View {
                                 .foregroundStyle(.tertiary)
                             Text("[\(entry.category.rawValue)]")
                                 .font(.system(size: 9, design: .monospaced))
-                                .foregroundStyle(.secondary)
+                                .foregroundStyle(Theme.cyan.opacity(0.6))
                             Text(entry.message)
                                 .font(.system(size: 9, design: .monospaced))
                                 .foregroundStyle(.primary)
@@ -77,7 +78,11 @@ struct DebugView: View {
             .frame(maxHeight: 150)
         }
         .padding(10)
-        .background(.ultraThinMaterial)
+        .background(Theme.midnightBlue.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 8))
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .strokeBorder(Theme.cyan.opacity(0.1), lineWidth: 1)
+        )
     }
 }

@@ -8,7 +8,7 @@ struct HistoryView: View {
             Text("History")
                 .font(.caption)
                 .fontWeight(.medium)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Theme.cyan.opacity(0.7))
                 .padding(.horizontal, 12)
                 .padding(.bottom, 6)
 
@@ -57,6 +57,6 @@ struct HistoryRow: View {
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 6)
-        .background(.ultraThinMaterial.opacity(0.5))
+        .background(Theme.midnightBlue.opacity(0.3))
     }
 }

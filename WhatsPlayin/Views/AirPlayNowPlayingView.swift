@@ -27,7 +27,7 @@ struct AirPlayNowPlayingView: View {
                             .font(.system(size: 42, weight: .bold))
                             .foregroundStyle(.white)
                             .lineLimit(1)
-                            .shadow(radius: 4)
+                            .shadow(color: Theme.cyan.opacity(0.5), radius: 8)
 
                         Text(track.artist)
                             .font(.system(size: 28, weight: .medium))
@@ -46,7 +46,7 @@ struct AirPlayNowPlayingView: View {
                     VStack(spacing: 8) {
                         Image(systemName: "music.note")
                             .font(.system(size: 60))
-                            .foregroundStyle(.white.opacity(0.5))
+                            .foregroundStyle(Theme.cyan.opacity(0.5))
                         Text("Waiting for music…")
                             .font(.system(size: 24))
                             .foregroundStyle(.white.opacity(0.5))
@@ -73,9 +73,9 @@ struct AirPlayNowPlayingView: View {
     private var backgroundGradient: some View {
         LinearGradient(
             colors: [
-                .black,
-                (currentTrack != nil ? Color.purple : Color.gray).opacity(0.4),
-                .black
+                Theme.navy,
+                (currentTrack != nil ? Theme.purple : Color.gray).opacity(0.4),
+                Theme.navy
             ],
             startPoint: animateGradient ? .topLeading : .bottomTrailing,
             endPoint: animateGradient ? .bottomTrailing : .topLeading
@@ -101,7 +101,7 @@ struct AirPlayNowPlayingView: View {
                 }
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
-                .background(.white.opacity(0.1))
+                .background(Theme.midnightBlue.opacity(0.6))
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             }
         }

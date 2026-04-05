@@ -41,6 +41,8 @@
 		B10001007 /* ConstantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000007; };
 		B10001008 /* StubProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000008; };
 		B10001009 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000009; };
+		A10001040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A10000040; };
+		A10001026 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000026; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		B10000008 /* StubProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubProviderTests.swift; sourceTree = "<group>"; };
 		B10000009 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
 		B10000050 /* WhatsPlayinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsPlayinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000040 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A10000026 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 				A10003007 /* ViewModels */,
 				A10003008 /* Views */,
 				A10003010 /* Utilities */,
+				A10000040 /* Assets.xcassets */,
 				A10000030 /* Info.plist */,
 				A10000031 /* WhatsPlayin.entitlements */,
 			);
@@ -224,6 +229,7 @@
 			children = (
 				A10000014 /* Constants.swift */,
 				A10000015 /* Logger.swift */,
+				A10000026 /* Theme.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			buildPhases = (
 				A10005001 /* Sources */,
 				A10002001 /* Frameworks */,
+				A10005002 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -348,6 +355,7 @@
 				A10001023 /* MainView.swift in Sources */,
 				A10001024 /* NowPlayingView.swift in Sources */,
 				A10001025 /* SettingsView.swift in Sources */,
+				A10001026 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +376,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A10005002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10001040 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		B10009002 /* PBXTargetDependency */ = {

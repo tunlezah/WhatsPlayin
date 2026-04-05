@@ -12,6 +12,7 @@ struct MainView: View {
                 Text("WhatsPlayin")
                     .font(.headline)
                     .fontWeight(.bold)
+                    .foregroundStyle(Theme.headerGradient)
 
                 Spacer()
 
@@ -26,12 +27,14 @@ struct MainView: View {
             .padding(.bottom, 8)
 
             Divider()
+                .overlay(Theme.midnightBlue)
 
             // Now Playing
             NowPlayingView(track: stateManager.currentTrack)
                 .padding(.vertical, 16)
 
             Divider()
+                .overlay(Theme.midnightBlue)
 
             // Controls
             HStack(spacing: 12) {
@@ -44,7 +47,7 @@ struct MainView: View {
                 }
                 .controlSize(.large)
                 .buttonStyle(.borderedProminent)
-                .tint(isListening ? .red : .accentColor)
+                .tint(isListening ? Theme.error : Theme.cyan)
 
                 Button(action: { stateManager.identifyManually() }) {
                     Label("Identify", systemImage: "waveform.badge.magnifyingglass")
@@ -52,6 +55,7 @@ struct MainView: View {
                 }
                 .controlSize(.large)
                 .buttonStyle(.bordered)
+                .tint(Theme.purple)
                 .disabled(!isListening || stateManager.recognitionService.isProcessing)
 
                 Button(action: { showSettings.toggle() }) {
@@ -59,17 +63,20 @@ struct MainView: View {
                 }
                 .controlSize(.large)
                 .buttonStyle(.bordered)
+                .tint(Theme.cyan)
 
                 Button(action: { showAirPlayWindow.toggle() }) {
                     Image(systemName: "airplayvideo")
                 }
                 .controlSize(.large)
                 .buttonStyle(.bordered)
+                .tint(Theme.cyan)
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
 
             Divider()
+                .overlay(Theme.midnightBlue)
 
             // History
             HistoryView(tracks: stateManager.history)
@@ -78,6 +85,7 @@ struct MainView: View {
             // Debug (if enabled)
             if stateManager.settings.debugModeEnabled {
                 Divider()
+                    .overlay(Theme.midnightBlue)
                 DebugView(
                     audioService: stateManager.audioService,
                     recognitionService: stateManager.recognitionService,
@@ -88,9 +96,11 @@ struct MainView: View {
             }
         }
         .frame(width: 400, height: stateManager.settings.debugModeEnabled ? 780 : 580)
-        .background(.ultraThinMaterial)
+        .background(Theme.backgroundGradient)
+        .preferredColorScheme(.dark)
         .popover(isPresented: $showSettings) {
             SettingsView(settings: stateManager.settings)
+                .preferredColorScheme(.dark)
         }
         .sheet(isPresented: $showAirPlayWindow) {
             AirPlayNowPlayingView(

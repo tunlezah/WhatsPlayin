@@ -18,18 +18,18 @@ struct AlbumArtView: View {
             } else {
                 ZStack {
                     LinearGradient(
-                        colors: [.purple.opacity(0.3), .blue.opacity(0.3)],
+                        colors: [Theme.purple.opacity(0.3), Theme.cyan.opacity(0.3)],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
                     Image(systemName: "music.note")
                         .font(.system(size: size * 0.3))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Theme.cyan.opacity(0.6))
                 }
             }
         }
         .frame(width: size, height: size)
         .clipShape(RoundedRectangle(cornerRadius: size * 0.06))
-        .shadow(color: .black.opacity(0.3), radius: 10, y: 5)
+        .shadow(color: Theme.cyan.opacity(0.15), radius: 10, y: 5)
     }
 }
