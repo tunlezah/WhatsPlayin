@@ -5,9 +5,9 @@ struct ConfidenceIndicator: View {
 
     private var color: Color {
         switch confidence {
-        case 0.8...1.0: return .green
-        case 0.6..<0.8: return .yellow
-        default: return .orange
+        case 0.8...1.0: return Theme.cyan
+        case 0.6..<0.8: return Theme.purple
+        default: return Theme.amber
         }
     }
 

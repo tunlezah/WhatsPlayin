@@ -39,12 +39,12 @@ struct StatusIndicator: View {
 
     private var statusColor: Color {
         switch state {
-        case .idle: return .gray
-        case .listening: return .green
-        case .processing: return .blue
-        case .identified: return .purple
-        case .coolingDown: return .orange
-        case .error: return .red
+        case .idle: return Theme.idle
+        case .listening: return Theme.listening
+        case .processing: return Theme.processing
+        case .identified: return Theme.identified
+        case .coolingDown: return Theme.coolingDown
+        case .error: return Theme.error
         }
     }
 
